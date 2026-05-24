@@ -1,0 +1,22 @@
+So what I want to do is build a image thumbnail creator using claude API. I want a skill that does everything automically and I want a all files generated for me, the skill, all the directors needed to get started. Every time a start a project I want this skill to use a project folder, directory structure and initial files to do what I need. The skill should use the /create-api claude task and env file, permissions file, settings file and the skill should be called thumbnail. I want to define properties such as the claude API key used and want a summary printed out to verify all is complete. Everything should be done using python. I need a plan file generated that should document what this project is used for. When running the skill a default vibe should be used (e.g. bold energetic etc) and initially defined in the properties file and a title and subtitle is input which is read from the properties file as well. Anything that is not in properties file claude will ask the user for the input i.e. queried to the user. In the properties file I want to also list the companyName, companyURL, company Email. The skill should output an image in the output folder with a title, subtlitle, graphics, a robot, vibe and company information. The company info is always placed on a footer at the bottom of the image centered and well as formatted. Output should included all python code that claude uses and a jupyter notbook file that I will able to run as well. If you suggest any else I need, please ask and we will update all files in the project. Place this prompt in a txt file in the project so it can be used again. The skill will be run on a laptop no pipeline is needed. The directory structure of the project should include a src, output, docs and any recommeded folders by claude code.
+
+── GitHub Integration (added 2026-05-24) ────────────────────────────────────
+The project is managed in GitHub under: https://github.com/stevebuonincontri/thumbnail-creator
+
+GitHub credentials are stored in .env (never committed):
+  GITHUB_TOKEN    — personal access token with repo scope
+  GITHUB_USERNAME — stevebuonincontri
+  GITHUB_REPO     — thumbnail-creator
+  GITHUB_BRANCH   — main
+
+src/github_manager.py handles all git/GitHub operations:
+  python3 src/github_manager.py           # init local repo + create remote + push
+  python3 src/github_manager.py --push    # push only
+  python3 src/github_manager.py --status  # show git status
+
+The thumbnail generator also accepts --push to sync after generation:
+  python3 src/thumbnail.py --push
+
+Safe-to-commit template for all env vars: .env.example
+Output images (output/*.png) are gitignored.
+─────────────────────────────────────────────────────────────────────────────
